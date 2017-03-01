@@ -16,13 +16,13 @@ namespace GraphLibrary
         {
             var lines = File.ReadAllLines(fileName);
             var nodesCount = int.Parse(lines[0]);
-            var graph=new Graph(nodesCount);
+            var graph = new Graph(nodesCount);
             for (var i = 1; i < lines.Length; i++)
             {
                 var incidents = lines[i].Split(' ').Select(int.Parse).ToArray();
-                for (var j=i-1;j<incidents.Length;j++)
+                for (var j = i - 1; j < incidents.Length; j++)
                     if (incidents[j] == 1)
-                        graph.Connect(graph[i], graph[j]);
+                        graph.Connect(graph[i], graph[j + 1]);
             }
             return graph;
         }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 using GraphLibrary;
 
 namespace BFS
@@ -11,8 +7,10 @@ namespace BFS
     {
         static void Main(string[] args)
         {
-            var parser=new GraphParser(@"in.txt");
+            var parser = new GraphParser(@"in.txt");
             var graph = parser.ParseGraph();
+            var result = graph.ContainsCycles() ? "N" : "A";
+            File.WriteAllText(@"out.txt", result);
         }
     }
 }

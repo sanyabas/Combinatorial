@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GraphLibrary
 {
@@ -10,14 +8,14 @@ namespace GraphLibrary
 
         public Graph(int nodesCount)
         {
-            nodes=new List<Node>();
-            for (var i=0;i<nodesCount;i++)
-                nodes.Add(new Node(i));
+            nodes = new List<Node>();
+            for (var i = 0; i < nodesCount; i++)
+                nodes.Add(new Node(i + 1));
         }
 
         public IEnumerable<Node> Nodes => nodes;
 
-        public Node this[int number] => nodes[number];
+        public Node this[int number] => nodes[number - 1];
 
         public Edge Connect(Node node1, Node node2)
         {

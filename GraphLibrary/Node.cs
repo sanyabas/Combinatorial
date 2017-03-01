@@ -12,6 +12,7 @@ namespace GraphLibrary
         public Node(int nodeNumber)
         {
             NodeNumber = nodeNumber;
+            Edges = new List<Edge>();
         }
 
         public IEnumerable<Node> IncidentNodes => Edges.Select(edge => edge.AnotherNode(this));
@@ -29,13 +30,18 @@ namespace GraphLibrary
         {
             if (!(obj is Node))
                 return false;
-            var another = (Node) obj;
+            var another = (Node)obj;
             return NodeNumber == another.NodeNumber;
         }
 
         public override int GetHashCode()
         {
             return NodeNumber;
+        }
+
+        public override string ToString()
+        {
+            return $"Node {NodeNumber}";
         }
     }
 }

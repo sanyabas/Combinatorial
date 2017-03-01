@@ -20,9 +20,14 @@ namespace GraphLibrary
 
         public Node AnotherNode(Node node)
         {
-            if (IsIncident(node))
+            if (!IsIncident(node))
                 throw new ArgumentException("Node is not incident");
             return node.Equals(First) ? Second : First;
+        }
+
+        public override string ToString()
+        {
+            return $"Edge {First}<->{Second}";
         }
     }
 }
