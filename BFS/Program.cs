@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using GraphLibrary;
+using System.Linq;
 
 namespace BFS
 {
@@ -9,8 +10,10 @@ namespace BFS
         {
             var parser = new GraphParser(@"in.txt");
             var graph = parser.ParseGraph();
-            var result = graph.ContainsCycles() ? "N" : "A";
-            File.WriteAllText(@"out.txt", result);
+            var result = graph.FindCycles();
+            var state = result == null ? "A" : "N";
+            var cycle = string.Join(" ", result.OrderBy(n => n.NodeNumber).Select(n=>n.NodeNumber));
+            File.WriteAllLines(@"out.txt", new[] { state, cycle });
         }
     }
 }

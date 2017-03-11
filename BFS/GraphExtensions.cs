@@ -6,15 +6,22 @@ namespace BFS
 {
     public static class GraphExtensions
     {
-        public static bool ContainsCycles(this Graph graph)
+        public static HashSet<Node> FindCycles(this Graph graph)
         {
-            return graph.Nodes.Any(graph.ContainsCycleFromNode);
+            foreach (var node in graph.Nodes)
+            {
+                var cycle = graph.FindCycleFromNode(node);
+                if (cycle != null)
+                    return cycle;
+            }
+            return null;
         }
 
-        private static bool ContainsCycleFromNode(this Graph graph, Node start)
+        private static HashSet<Node> FindCycleFromNode(this Graph graph, Node start)
         {
             var open = new Queue<Node>();
             var visited = new HashSet<Node>();
+            var parents = new Dictionary<Node, Node>();
             open.Enqueue(start);
             while (open.Any())
             {
@@ -23,11 +30,29 @@ namespace BFS
                 foreach (var neighbour in current.IncidentNodes.Where(node => !visited.Contains(node)))
                 {
                     if (open.Contains(neighbour))
-                        return true;
+                        return graph.GetCycle(neighbour,current,parents);
+                    parents[neighbour] = current;
                     open.Enqueue(neighbour);
                 }
             }
-            return false;
+            return null;
+        }
+
+        private static HashSet<Node> GetCycle(this Graph graph, Node start, Node secondNode,Dictionary<Node,Node> parents)
+        {
+            var firstPath = new List<Node>();
+            var secondPath = new List<Node>();
+            firstPath.Add(start);
+            secondPath.Add(secondNode);
+            while (!firstPath.Last().Equals(secondPath.Last()))
+            {
+
+                start = parents[start];
+                secondNode = parents[secondNode];
+                firstPath.Add(start);
+                secondPath.Add(secondNode);
+            }
+            return new HashSet<Node>(firstPath.Union(secondPath));
         }
     }
 }
