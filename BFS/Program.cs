@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using GraphLibrary;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace BFS
 {
@@ -12,8 +13,11 @@ namespace BFS
             var graph = parser.ParseGraph();
             var result = graph.FindCycles();
             var state = result == null ? "A" : "N";
-            var cycle = string.Join(" ", result.OrderBy(n => n.NodeNumber).Select(n=>n.NodeNumber));
-            File.WriteAllLines(@"out.txt", new[] { state, cycle });
+            var stringsToWrite = new List<string>();
+            stringsToWrite.Add(state);
+            if (result!=null)
+                stringsToWrite.Add(string.Join(" ", result.OrderBy(n => n.NodeNumber).Select(n=>n.NodeNumber)));
+            File.WriteAllLines(@"out.txt", stringsToWrite);
         }
     }
 }
