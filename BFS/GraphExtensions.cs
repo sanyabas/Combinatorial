@@ -30,7 +30,7 @@ namespace BFS
                 foreach (var neighbour in current.IncidentNodes.Where(node => !visited.Contains(node)))
                 {
                     if (open.Contains(neighbour))
-                        return graph.GetCycle(neighbour,current,parents);
+                        return graph.GetCycle(neighbour, current, parents);
                     parents[neighbour] = current;
                     open.Enqueue(neighbour);
                 }
@@ -38,7 +38,7 @@ namespace BFS
             return null;
         }
 
-        private static HashSet<Node> GetCycle(this Graph graph, Node start, Node secondNode,Dictionary<Node,Node> parents)
+        private static HashSet<Node> GetCycle(this Graph graph, Node start, Node secondNode, Dictionary<Node, Node> parents)
         {
             var firstPath = new List<Node>();
             var secondPath = new List<Node>();
@@ -46,9 +46,10 @@ namespace BFS
             secondPath.Add(secondNode);
             while (!firstPath.Last().Equals(secondPath.Last()))
             {
-
-                start = parents[start];
-                secondNode = parents[secondNode];
+                if (parents.ContainsKey(start))
+                    start = parents[start];
+                if (parents.ContainsKey(secondNode))
+                    secondNode = parents[secondNode];
                 firstPath.Add(start);
                 secondPath.Add(secondNode);
             }
