@@ -12,7 +12,7 @@ namespace GraphLibrary
             this.fileName = fileName;
         }
 
-        public Graph ParseGraph()
+        public virtual Graph ParseGraph()
         {
             var lines = File.ReadAllLines(fileName);
             var nodesCount = int.Parse(lines[0]);
