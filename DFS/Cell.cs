@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using GraphLibrary;
 
 namespace DFS
@@ -26,6 +27,7 @@ namespace DFS
                     (Row!=1) ? maze[Row - 1, Column] : null,
                     (Row != maze.Height) ? maze[Row + 1, Column] : null
                 };
+                cells=cells.Reverse().ToArray();
                 foreach (var cell in cells)
                     if (cell != null)
                         yield return cell;

@@ -5,6 +5,8 @@ namespace GraphLibrary
     public class Graph
     {
         private List<Node> nodes;
+        public Node Start { get; set; }
+        public Node Finish { get; set; }
 
         public Graph(int nodesCount)
         {
@@ -17,9 +19,9 @@ namespace GraphLibrary
 
         public Node this[int number] => nodes[number - 1];
 
-        public Edge Connect(Node node1, Node node2)
+        public Edge Connect(Node node1, Node node2, int weight = 0)
         {
-            return Node.Connect(node1, node2, this);
+            return Node.Connect(node1, node2, weight, this);
         }
     }
 }

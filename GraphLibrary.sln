@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFS", "BFS\BFS.csproj", "{7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DFS", "DFS\DFS.csproj", "{9DB27B10-8147-40C7-A130-67C488764BE5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dijkstra", "Dijkstra\Dijkstra.csproj", "{BED8D91E-FB42-4A48-BFC2-C40E5520BA8B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{9DB27B10-8147-40C7-A130-67C488764BE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DB27B10-8147-40C7-A130-67C488764BE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DB27B10-8147-40C7-A130-67C488764BE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BED8D91E-FB42-4A48-BFC2-C40E5520BA8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BED8D91E-FB42-4A48-BFC2-C40E5520BA8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BED8D91E-FB42-4A48-BFC2-C40E5520BA8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BED8D91E-FB42-4A48-BFC2-C40E5520BA8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

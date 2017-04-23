@@ -6,11 +6,13 @@ namespace GraphLibrary
     {
         public readonly Node First;
         public readonly Node Second;
+        public readonly int Weight;
 
-        public Edge(Node first, Node second)
+        public Edge(Node first, Node second,int weight=0)
         {
             First = first;
             Second = second;
+            Weight = weight;
         }
 
         public bool IsIncident(Node node)
@@ -27,7 +29,7 @@ namespace GraphLibrary
 
         public override string ToString()
         {
-            return $"Edge {First}<->{Second}";
+            return $"Edge {First}->{Second}";
         }
     }
 }

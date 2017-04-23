@@ -5,7 +5,7 @@ namespace GraphLibrary
 {
     public class GraphParser
     {
-        private readonly string fileName;
+        protected readonly string fileName;
 
         public GraphParser(string fileName)
         {
