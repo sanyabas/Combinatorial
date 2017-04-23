@@ -19,7 +19,7 @@ namespace Dijkstra
             else
             {
                 result.Add("Y");
-                result.AddRange(path.Select(node => node.NodeNumber.ToString()));
+                result.Add(string.Join(" ",path.Select(node => node.NodeNumber)));
                 result.Add(length.ToString());
             }
             File.WriteAllLines("out.txt", result);
