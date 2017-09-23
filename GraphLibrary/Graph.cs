@@ -9,12 +9,14 @@ namespace GraphLibrary
         private List<Node> nodes;
         public Node Start { get; set; }
         public Node Finish { get; set; }
+        public int NodesCount { get; }
 
         public Graph(int nodesCount)
         {
             nodes = new List<Node>();
             for (var i = 0; i < nodesCount; i++)
                 nodes.Add(new Node(i + 1));
+            NodesCount = nodesCount;
         }
 
         public IEnumerable<Node> Nodes => nodes;

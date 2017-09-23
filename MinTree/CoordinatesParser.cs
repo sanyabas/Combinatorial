@@ -5,14 +5,14 @@ using GraphLibrary;
 
 namespace MinTree
 {
-    public class CoordinatesParser : GraphParser
+    public class CoordinatesParser<T> : GraphParser<Point> where T : IComparable<T>
     {
         public CoordinatesParser(string fileName) : base(fileName)
         {
 
         }
 
-        public override Graph ParseGraph()
+        public override Graph<Point> ParseGraph()
         {
             Func<Point, Point, int> metrics = (p1, p2) => Math.Abs(p1.X - p2.X) + Math.Abs(p1.Y - p2.Y);
             var lines = File.ReadAllLines(fileName);
@@ -26,7 +26,7 @@ namespace MinTree
             }
             for (var i = 1; i <= nodesCount - 1; i++)
             {
-                for (var j = i+1; j <= nodesCount; j++)
+                for (var j = i + 1; j <= nodesCount; j++)
                 {
                     var first = graph[i];
                     var second = graph[j];
