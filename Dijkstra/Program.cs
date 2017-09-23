@@ -10,7 +10,6 @@ namespace Dijkstra
         static void Main(string[] args)
         {
             var graph = new ListParser("in.txt").ParseGraph();
-            Console.WriteLine("parsed");
             var (path, length) = graph.FindDijkstraPath(graph.Start, graph.Finish);
             Console.WriteLine("calculated");
             var result = new List<string>();

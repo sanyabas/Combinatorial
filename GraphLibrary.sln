@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphLibrary", "GraphLibrary\GraphLibrary.csproj", "{F0F9AB31-F6F6-4D0B-A6B9-33A79E3AFEE8}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DFS", "DFS\DFS.csproj", "{9DB27B10-8147-40C7-A130-67C488764BE5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dijkstra", "Dijkstra\Dijkstra.csproj", "{BED8D91E-FB42-4A48-BFC2-C40E5520BA8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinTree", "MinTree\MinTree.csproj", "{8223E696-BE06-497B-85E7-DCA3C7B99FCE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +35,15 @@ Global
 		{BED8D91E-FB42-4A48-BFC2-C40E5520BA8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BED8D91E-FB42-4A48-BFC2-C40E5520BA8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BED8D91E-FB42-4A48-BFC2-C40E5520BA8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8223E696-BE06-497B-85E7-DCA3C7B99FCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8223E696-BE06-497B-85E7-DCA3C7B99FCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8223E696-BE06-497B-85E7-DCA3C7B99FCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8223E696-BE06-497B-85E7-DCA3C7B99FCE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {70689AFF-B248-45EA-BDB8-F9B1BB780A21}
 	EndGlobalSection
 EndGlobal

@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace GraphLibrary
 {
@@ -23,5 +25,22 @@ namespace GraphLibrary
         {
             return Node.Connect(node1, node2, weight, this);
         }
+    }
+
+    public class Graph<T> : Graph where T:IComparable<T>
+    {
+        private List<Node<T>> nodes;
+        public Graph(int nodesCount) : base(nodesCount)
+        {
+            nodes=new List<Node<T>>();
+            for (var i=0;i<nodesCount;i++)
+                nodes.Add(new Node<T>(i+1));
+        }
+
+        public new IEnumerable<Node<T>> Nodes => nodes;
+
+        public Node this[T value] => nodes.Single(x => x.Value.Equals(value));
+
+        public new Node<T> this[int number] => nodes[number - 1];
     }
 }

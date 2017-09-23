@@ -22,8 +22,8 @@ namespace GraphLibrary
 
         public static Edge Connect(Node node1, Node node2, int weight, Graph graph)
         {
-            if (!graph.Nodes.Contains(node1) || !graph.Nodes.Contains(node2))
-                throw new ArgumentException("Nodes don't belong to graph");
+            //if (!graph.Nodes.Contains(node1) || !graph.Nodes.Contains(node2))
+            //    throw new ArgumentException("Nodes don't belong to graph");
             var edge = new Edge(node1, node2, weight);
             node1.Edges.Add(edge);
             //node2.Edges.Add(edge);//TODO check if edge exists
@@ -45,6 +45,15 @@ namespace GraphLibrary
         public override string ToString()
         {
             return $"Node {NodeNumber}";
+        }
+    }
+
+    public class Node<T>:Node
+    {
+        public T Value { get; set; }
+
+        public Node(int nodeNumber) : base(nodeNumber)
+        {
         }
     }
 }
