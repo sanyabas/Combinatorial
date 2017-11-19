@@ -26,8 +26,24 @@ namespace GraphLibrary
             //    throw new ArgumentException("Nodes don't belong to graph");
             var edge = new Edge(node1, node2, weight);
             node1.Edges.Add(edge);
-            //node2.Edges.Add(edge);//TODO check if edge exists
+            node2.Edges.Add(edge);
+            //TODO check if edge exists
             return edge;
+        }
+
+        public static Edge ConnectOneWay(Node node1, Node node2, int weight, Graph graph)
+        {
+            var edge = new Edge(node1, node2, weight);
+            node1.Edges.Add(edge);
+            return edge;
+        }
+
+        public Edge GetEdgeToNode(Node other)
+        {
+            var result = Edges.FirstOrDefault(edge => edge.IsIncident(other));
+            if (result != null)
+                return result;
+            throw new ArgumentException("Node is not incident to another");
         }
         public override bool Equals(object obj)
         {
@@ -48,7 +64,7 @@ namespace GraphLibrary
         }
     }
 
-    public class Node<T>:Node
+    public class Node<T> : Node
     {
         public T Value { get; set; }
 

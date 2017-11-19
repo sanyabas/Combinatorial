@@ -31,5 +31,27 @@ namespace GraphLibrary
         {
             return $"Edge {First}->{Second}";
         }
+
+        protected bool Equals(Edge other)
+        {
+            return (Equals(First, other.First) && Equals(Second, other.Second))||
+                Equals(First,other.Second) && Equals(Second, other.First);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return Equals((Edge) obj);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return ((First != null ? First.GetHashCode() : 0) * 397) ^ (Second != null ? Second.GetHashCode() : 0);
+            }
+        }
     }
 }

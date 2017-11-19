@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphLibrary", "GraphLibrary\GraphLibrary.csproj", "{F0F9AB31-F6F6-4D0B-A6B9-33A79E3AFEE8}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dijkstra", "Dijkstra\Dijkstra.csproj", "{BED8D91E-FB42-4A48-BFC2-C40E5520BA8B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinTree", "MinTree\MinTree.csproj", "{8223E696-BE06-497B-85E7-DCA3C7B99FCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiggestMatching", "BiggestMatching\BiggestMatching.csproj", "{EF92B6FF-2EDC-4277-AD12-0C3E91D46ABF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{8223E696-BE06-497B-85E7-DCA3C7B99FCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8223E696-BE06-497B-85E7-DCA3C7B99FCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8223E696-BE06-497B-85E7-DCA3C7B99FCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF92B6FF-2EDC-4277-AD12-0C3E91D46ABF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF92B6FF-2EDC-4277-AD12-0C3E91D46ABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF92B6FF-2EDC-4277-AD12-0C3E91D46ABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF92B6FF-2EDC-4277-AD12-0C3E91D46ABF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

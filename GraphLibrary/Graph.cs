@@ -27,16 +27,21 @@ namespace GraphLibrary
         {
             return Node.Connect(node1, node2, weight, this);
         }
+
+        public Edge ConnectOneWay(Node node1, Node node2, int weight = 0)
+        {
+            return Node.ConnectOneWay(node1, node2, weight, this);
+        }
     }
 
-    public class Graph<T> : Graph where T:IComparable<T>
+    public class Graph<T> : Graph where T : IComparable<T>
     {
         private List<Node<T>> nodes;
         public Graph(int nodesCount) : base(nodesCount)
         {
-            nodes=new List<Node<T>>();
-            for (var i=0;i<nodesCount;i++)
-                nodes.Add(new Node<T>(i+1));
+            nodes = new List<Node<T>>();
+            for (var i = 0; i < nodesCount; i++)
+                nodes.Add(new Node<T>(i + 1));
         }
 
         public new IEnumerable<Node<T>> Nodes => nodes;
